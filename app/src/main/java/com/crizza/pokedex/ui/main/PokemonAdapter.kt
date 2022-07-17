@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
+import coil.size.Scale
 import com.crizza.pokedex.databinding.ItemPokemonBinding
 import com.crizza.pokedex.model.main.Pokemon
 
@@ -18,7 +19,8 @@ class PokemonAdapter : ListAdapter<Pokemon, PokemonAdapter.ViewHolder>(PokemonDi
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
         holder.bind(getItem(position))
 
-    class ViewHolder(private val binding: ItemPokemonBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ItemPokemonBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         companion object {
             fun create(layoutInflater: LayoutInflater, parent: ViewGroup?): ViewHolder {
                 val crewItemBinding = ItemPokemonBinding.inflate(layoutInflater, parent, false)
@@ -28,7 +30,9 @@ class PokemonAdapter : ListAdapter<Pokemon, PokemonAdapter.ViewHolder>(PokemonDi
 
         fun bind(pokemon: Pokemon) {
             with(binding) {
-                itemPokemonImg.load(pokemon.getPokemonImageUrl())
+                itemPokemonImg.load(pokemon.getPokemonImageUrl()) {
+                    scale(Scale.FIT)
+                }
                 itemPokemonName.text = pokemon.name.capitalize()
                 root.setOnClickListener { view ->
                     val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(pokemon)

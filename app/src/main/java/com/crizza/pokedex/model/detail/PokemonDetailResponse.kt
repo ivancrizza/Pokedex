@@ -12,10 +12,12 @@ data class PokemonDetailResponse(
     val id: Int,
     @Json(name = "name")
     val name: String,
-    @Json(name = "order")
+    @Json(name = "order")   
     val order: Int,
     @Json(name = "types")
     val types: List<PokemonTypes>,
     @Json(name = "weight")
-    val weight: Int
+    val weight: Int,
+    @Json(name = "base_experience")
+    val baseExp: Int
 )

@@ -54,6 +54,7 @@ class DetailFragment : Fragment() {
                         with(binding) {
                             this?.let {
                                 detailProgressBar.gone()
+                                detailExp.text = result.data.baseExp.toString()
                                 detailHeight.text = "${result.data.height.toDouble() / 10} M"
                                 detailWeight.text = "${result.data.weight.toDouble() / 10} KG"
                                 imageView.load(args.pokemon.getPokemonImageUrl())
