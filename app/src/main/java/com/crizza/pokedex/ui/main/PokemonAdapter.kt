@@ -29,7 +29,7 @@ class PokemonAdapter : ListAdapter<Pokemon, PokemonAdapter.ViewHolder>(PokemonDi
         fun bind(pokemon: Pokemon) {
             with(binding) {
                 itemPokemonImg.load(pokemon.getPokemonImageUrl())
-                itemPokemonName.text = pokemon.name
+                itemPokemonName.text = pokemon.name.capitalize()
                 root.setOnClickListener { view ->
                     val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(pokemon)
                     view.findNavController().navigate(action)

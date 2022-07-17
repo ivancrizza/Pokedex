@@ -41,7 +41,7 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding?.detailName?.text = args.pokemon.name
+        binding?.detailName?.text = args.pokemon.name.capitalize()
 
         viewModel.getSinglePokemon(args.pokemon.name)
         lifecycleScope.launch {
