@@ -43,13 +43,21 @@ class HomeFragment : Fragment() {
             viewModel.pokemonList.collect { result ->
                 when(result) {
                     is Result.Loading -> {
-                        binding?.progressbar?.visible()
-                        binding?.pokemonRecyclerview?.gone()
+                        with(binding){
+                            this?.let {
+                                progressbar?.visible()
+                                pokemonRecyclerview?.gone()
+                            }
+                        }
                     }
                     is Result.Success -> {
-                        binding?.progressbar?.gone()
-                        binding?.pokemonRecyclerview?.visible()
                         adapter.submitList(result.data.results)
+                        with(binding){
+                            this?.let {
+                                progressbar?.gone()
+                                pokemonRecyclerview?.visible()
+                            }
+                        }
                     }
                     is Result.Error -> {
                         activity?.toast("Something went wrong. Please try again later")

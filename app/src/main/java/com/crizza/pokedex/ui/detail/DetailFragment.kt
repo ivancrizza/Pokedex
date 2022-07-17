@@ -29,7 +29,11 @@ class DetailFragment : Fragment() {
     private val args: DetailFragmentArgs by navArgs()
     private var binding: FragmentDetailBinding? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = FragmentDetailBinding.inflate(inflater, container, false)
         return binding?.root
     }
@@ -42,15 +46,19 @@ class DetailFragment : Fragment() {
         viewModel.getSinglePokemon(args.pokemon.name)
         lifecycleScope.launch {
             viewModel.pokemon.collect { result ->
-                when(result) {
+                when (result) {
                     is Result.Loading -> {
                         binding?.detailProgressBar?.visible()
                     }
                     is Result.Success -> {
-                        binding?.detailProgressBar?.gone()
-                        binding?.detailHeight?.text = "${result.data.height.toDouble() / 10} M"
-                        binding?.detailWeight?.text = "${result.data.weight.toDouble() / 10} KG"
-                        binding?.imageView?.load(args.pokemon.getPokemonImageUrl())
+                        with(binding) {
+                            this?.let {
+                                detailProgressBar.gone()
+                                detailHeight.text = "${result.data.height.toDouble() / 10} M"
+                                detailWeight.text = "${result.data.weight.toDouble() / 10} KG"
+                                imageView.load(args.pokemon.getPokemonImageUrl())
+                            }
+                        }
                     }
                     is Result.Error -> {
                         activity?.toast("Something went wrong. Please try again later")

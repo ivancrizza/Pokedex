@@ -10,14 +10,15 @@ import coil.api.load
 import com.crizza.pokedex.databinding.ItemPokemonBinding
 import com.crizza.pokedex.model.main.Pokemon
 
-class PokemonAdapter: ListAdapter<Pokemon, PokemonAdapter.ViewHolder>(PokemonDiffCallback()) {
+class PokemonAdapter : ListAdapter<Pokemon, PokemonAdapter.ViewHolder>(PokemonDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
         ViewHolder.create(LayoutInflater.from(parent.context), parent)
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(getItem(position))
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) =
+        holder.bind(getItem(position))
 
-    class ViewHolder(val binding: ItemPokemonBinding): RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ItemPokemonBinding) : RecyclerView.ViewHolder(binding.root) {
         companion object {
             fun create(layoutInflater: LayoutInflater, parent: ViewGroup?): ViewHolder {
                 val crewItemBinding = ItemPokemonBinding.inflate(layoutInflater, parent, false)
@@ -26,12 +27,13 @@ class PokemonAdapter: ListAdapter<Pokemon, PokemonAdapter.ViewHolder>(PokemonDif
         }
 
         fun bind(pokemon: Pokemon) {
-            binding.itemPokemonImg.load(pokemon.getPokemonImageUrl())
-            binding.itemPokemonName.text = pokemon.name
-
-            binding.root.setOnClickListener {view ->
-                val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(pokemon)
-                view.findNavController().navigate(action)
+            with(binding) {
+                itemPokemonImg.load(pokemon.getPokemonImageUrl())
+                itemPokemonName.text = pokemon.name
+                root.setOnClickListener { view ->
+                    val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(pokemon)
+                    view.findNavController().navigate(action)
+                }
             }
         }
     }
