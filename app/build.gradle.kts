@@ -16,6 +16,7 @@ android {
         targetSdkVersion(Configs.targetSdkVersion)
         versionCode = Configs.versionCode
         versionName = Configs.versionName
+        multiDexEnabled = true
 
         testInstrumentationRunner = Configs.testInstrumentationRunner
     }
@@ -72,6 +73,9 @@ dependencies {
     // Dagger-Hilt
     implementation(Dependencies.Dagger.hiltAndroid)
     kapt(Dependencies.Dagger.hiltAndroidCompiler)
+
+    // Paging
+    implementation(Dependencies.Paging.pading)
 
     // Networking
     implementation(Dependencies.Retrofit.retrofit)

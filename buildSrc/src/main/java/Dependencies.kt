@@ -100,6 +100,15 @@ object Dependencies {
         const val coil = "io.coil-kt:coil:$version"
     }
 
+    object Paging {
+        private const val pading_version ="3.0.0-alpha05"
+        const val pading = "androidx.paging:paging-runtime:$pading_version"
+    }
+    object Multi{
+        private const val version = "2.0.1"
+        const val multi = "androidx.multidex:multidex:$version"
+    }
+
     object Test {
         object Junit {
             private const val version = "4.12"
