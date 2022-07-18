@@ -4,7 +4,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.crizza.pokedex.model.detail.PokemonDetailResponse
-import com.crizza.pokedex.repository.DetailRepository
+import com.crizza.pokedex.data.repository.DetailRepository
 import com.crizza.pokedex.utils.Result
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow

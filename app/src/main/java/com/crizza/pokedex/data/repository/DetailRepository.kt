@@ -1,4 +1,4 @@
-package com.crizza.pokedex.repository
+package com.crizza.pokedex.data.repository
 
 import com.crizza.pokedex.data.remote.PokeService
 import com.crizza.pokedex.model.detail.PokemonDetailResponse

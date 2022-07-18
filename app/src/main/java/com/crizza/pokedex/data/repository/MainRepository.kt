@@ -1,4 +1,4 @@
-package com.crizza.pokedex.repository
+package com.crizza.pokedex.data.repository
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
