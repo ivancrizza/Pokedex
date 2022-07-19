@@ -11,20 +11,22 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 
 @ExperimentalCoroutinesApi
 class MainViewModel @ViewModelInject constructor(
     private val repository: MainRepository
-): ViewModel() {
+) : ViewModel() {
 
     private val _pokemonList = MutableStateFlow<Result<PokemonResponse>>(Result.Loading)
     val pokemonList: StateFlow<Result<PokemonResponse>> = _pokemonList
 
     fun getPokemonList() {
-        repository.getPokemonList()
-            .onEach {
-                _pokemonList.value = it
-            }
-            .launchIn(viewModelScope)
+        viewModelScope.launch {
+            repository.getPokemonList()
+                .onEach {
+                    _pokemonList.value = it
+                }.launchIn(viewModelScope)
+        }
     }
 }

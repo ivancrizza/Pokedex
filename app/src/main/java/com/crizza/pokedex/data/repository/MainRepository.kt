@@ -2,6 +2,7 @@ package com.crizza.pokedex.data.repository
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
+import androidx.paging.cachedIn
 import com.crizza.pokedex.data.PokemonPaging
 import com.crizza.pokedex.data.remote.PokeService
 import com.crizza.pokedex.model.main.PokemonResponse

@@ -1,7 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2FB75D</color>
-    <color name="colorPrimaryDark">#177B3A</color>
-    <color name="colorAccent">#144081</color>
-    <color name="material50_blue">#E0F7FA</color>
+<color name="colorPrimary">#2FB75D</color>
+<color name="colorPrimaryDark">#177B3A</color>
+<color name="colorAccent">#144081</color>
+<color name="material50_blue">#E0F7FA</color>
+<color name="purple_200">#FFBB86FC</color>
+<color name="purple_500">#FF6200EE</color>
+<color name="purple_700">#FF3700B3</color>
+<color name="teal_200">#FF03DAC5</color>
+<color name="teal_700">#FF018786</color>
+<color name="black">#FF000000</color>
+<color name="white">#FFFFFFFF</color>
+<color name="white_50">#99FFFFFF</color>
+<color name="light_gray">#F7F7F7</color>
+<color name="dark_gray">#292929</color>
+<color name="pokedex">#FF4A4A</color>
+
+<!--    Types-->
+<color name="electric_type_background">#FFEE59</color>
+<color name="electric_type_tag">#F0D800</color>
+
+<color name="fire_type_background">#FF9839</color>
+<color name="fire_type_tag">#DC812E</color>
+
+<color name="grass_type_background">#B5FFB5</color>
+<color name="grass_type_tag">#99D999</color>
+
+<color name="water_type_background">#79DFFF</color>
+<color name="water_type_tag">#65BBD6</color>
+
+<color name="psychic_type_background">#FFAEDF</color>
+<color name="psychic_type_tag">#D792BB</color>
+
+<color name="bug_type_background">#CBD95F</color>
+<color name="bug_type_tag">#AEB952</color>
+
+<color name="flying_type_background">#88ABEF</color>
+<color name="flying_type_tag">#7893C9</color>
+
+<color name="ghost_type_background">#836AAC</color>
+<color name="ghost_type_tag">#6E588E</color>
+
+<color name="normal_type_background">#A59494</color>
+<color name="normal_type_tag">#877878</color>
+
+<color name="rock_type_background">#B9B9B9</color>
+<color name="rock_type_tag">#8D8D8D</color>
+
+<color name="fighting_type_background">#DB5D4A</color>
+<color name="fighting_type_tag">#BA5343</color>
+
+<color name="poison_type_background">#CBA3D4</color>
+<color name="poison_type_tag">#A686AD</color>
+
+<color name="ground_type_background">#94775B</color>
+<color name="ground_type_tag">#745E48</color>
+
+<color name="ice_type_background">#CEF3FF</color>
+<color name="ice_type_tag">#8CC8DB</color>
+
+<color name="dragon_type_background">#A089FA</color>
+<color name="dragon_type_tag">#8875D2</color>
 </resources>

@@ -6,12 +6,13 @@
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
     android:elevation="8dp"
+    android:padding="8dp"
     app:cardCornerRadius="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:foreground="?attr/selectableItemBackground">
+        android:background="@color/light_gray">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/item_pokemon_img"
