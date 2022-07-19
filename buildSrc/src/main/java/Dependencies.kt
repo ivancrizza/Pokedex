@@ -124,5 +124,17 @@ object Dependencies {
             private const val version = "3.2.0"
             const val espresso = "androidx.test.espresso:espresso-core:$version"
         }
+        object Mockk {
+            private const val version = "1.12.4"
+            const val mockk = "io.mockk:mockk:{version}"
+        }
+        object MockkAgent {
+            private const val version = "1.12.4"
+            const val mockka = "io.mockk:mockk-agent-jvm:{version}"
+        }
+        object MockkCommon {
+            private const val version = "1.12.4"
+            const val mockkc = "io.mockk:mockk-common:{version}"
+        }
     }
 }

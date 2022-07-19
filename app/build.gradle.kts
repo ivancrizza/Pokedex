@@ -65,6 +65,8 @@ dependencies {
     implementation(Dependencies.AndroidX.Navigation.fragment)
     implementation(Dependencies.AndroidX.Navigation.ui)
     implementation(Dependencies.AndroidX.Hilt.viewModel)
+    testImplementation("junit:junit:4.12")
+    testImplementation("org.junit.jupiter:junit-jupiter")
     kapt(Dependencies.AndroidX.Hilt.compiler)
 
     // Material
@@ -91,6 +93,9 @@ dependencies {
     implementation(Dependencies.Coil.coil)
 
     // Test
+    testImplementation(Dependencies.Test.Mockk.mockk)
+    testImplementation(Dependencies.Test.MockkAgent.mockka)
+    testImplementation(Dependencies.Test.MockkCommon.mockkc)
     testImplementation(Dependencies.Test.Junit.junit)
     androidTestImplementation(Dependencies.Test.Ext.ext)
     androidTestImplementation(Dependencies.Test.Espresso.espresso)
