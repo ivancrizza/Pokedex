@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
-    android:elevation="8dp"
-    android:padding="8dp"
-    app:cardCornerRadius="8dp">
+    android:layout_margin="@dimen/margin_04"
+    android:elevation="@dimen/margin_08"
+    android:padding="@dimen/margin_08"
+    app:cardCornerRadius="@dimen/margin_08">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,9 +16,9 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/item_pokemon_img"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="8dp"
+            android:layout_width="@dimen/hundred_dp"
+            android:layout_height="@dimen/hundred_dp"
+            android:layout_margin="@dimen/margin_08"
             android:scaleType="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="8dp"
+            android:padding="@dimen/margin_08"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="@android:color/black"
             android:textStyle="bold"

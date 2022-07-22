@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Pokedex</string>
+    <string name="two_hundred">220.0 KG</string>
+    <string name="two_point_three_meters">2,3 M</string>
+    <string name="ten">10</string>
+    <string name="grass_title">grass</string>
+    <string name="high">Altura</string>
+    <string name="experience">Exp.</string>
+    <string name="type">Tipo</string>
+    <string name="weight">Peso</string>
 </resources>
