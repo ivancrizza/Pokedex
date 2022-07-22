@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.packaging.fromProjectProperties
+
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -5,6 +7,7 @@ plugins {
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
     id("androidx.navigation.safeargs.kotlin")
+
 }
 android {
     compileSdkVersion(Configs.compileSdkVersion)
@@ -17,10 +20,9 @@ android {
         versionCode = Configs.versionCode
         versionName = Configs.versionName
         multiDexEnabled = true
-
+        testBuildType = "debug"
         testInstrumentationRunner = Configs.testInstrumentationRunner
     }
-
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
@@ -42,11 +44,20 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    testOptions {
+        unitTests.isReturnDefaultValues = true
+        unitTests.isIncludeAndroidResources = true
+        animationsDisabled = true
+    }
 }
 
 dependencies {
-
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    testImplementation( "junit:junit:4.13.2")
+    testImplementation ("io.mockk:mockk:1.12.4")
+    testImplementation(project(mapOf("path" to ":app")))
+    androidTestImplementation ("androidx.test.ext:junit:1.1.3")
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
 
     // Kotlin
     implementation(Dependencies.Kotlin.kotlin)
@@ -65,8 +76,6 @@ dependencies {
     implementation(Dependencies.AndroidX.Navigation.fragment)
     implementation(Dependencies.AndroidX.Navigation.ui)
     implementation(Dependencies.AndroidX.Hilt.viewModel)
-    testImplementation("junit:junit:4.12")
-    testImplementation("org.junit.jupiter:junit-jupiter")
     kapt(Dependencies.AndroidX.Hilt.compiler)
 
     // Material
@@ -93,11 +102,5 @@ dependencies {
     implementation(Dependencies.Coil.coil)
 
     // Test
-    testImplementation(Dependencies.Test.Mockk.mockk)
-    testImplementation(Dependencies.Test.MockkAgent.mockka)
-    testImplementation(Dependencies.Test.MockkCommon.mockkc)
-    testImplementation(Dependencies.Test.Junit.junit)
-    androidTestImplementation(Dependencies.Test.Ext.ext)
-    androidTestImplementation(Dependencies.Test.Espresso.espresso)
 
 }
